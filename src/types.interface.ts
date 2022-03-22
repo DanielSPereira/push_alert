@@ -1,4 +1,4 @@
-export interface IWebhookData {
+interface IWebhookData {
     id: string;
     token: string
 }

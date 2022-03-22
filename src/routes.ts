@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { WebhookClient, MessageEmbed } from "discord.js";
-import { IWebhookData } from './types'
 
 const routes = Router();
 
@@ -26,14 +25,10 @@ routes.post("/", async (req, res) => {
         name: actor.display_name,
         url: actor.links.self.href,
         iconURL: actor.links.avatar.href,
-      }).
-      addFields([
-        {
-          name: "Projeto:",
-          value: repository.name.charAt(0).toUpperCase() + repository.name.slice(1),
-        },
+      }).addFields([
+        { name: "Projeto:", value: repository.name.charAt(0).toUpperCase() + repository.name.slice(1) },
         { name: changes[0].new.type.charAt(0).toUpperCase() +  changes[0].new.type.slice(1) + ':', value: changes[0].new.name },
-        { name: "Mensagem do Commit:", value: changes[0].new.target.message },
+        { name: "Mensagem do Commit:", value: changes[0].new.target.message }
       ]);
 
     await webhookClient.send({
