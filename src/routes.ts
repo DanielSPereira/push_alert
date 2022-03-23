@@ -6,3 +6,4 @@ const router = Router();
 router.post("/channel/:id", pushController.notifyPush);
 
 export { router };
+ 
