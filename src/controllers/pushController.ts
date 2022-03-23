@@ -35,7 +35,7 @@ export default {
         .addFields([
           {
             name: "Projeto:",
-            value: name.charAt(0).toUpperCase() + name.slice(1),
+            value: name,
           },
           {
             name:
