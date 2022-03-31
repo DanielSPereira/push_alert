@@ -1,1 +1,0 @@
-type Discord_Id_Token = [id: string, token: string];
